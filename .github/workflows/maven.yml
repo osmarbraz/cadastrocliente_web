@@ -75,12 +75,9 @@ jobs:
     - name: Verifica o projeto com Maven e Jacoco
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-     #run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml -Dsonar.projectKey=cadastrocliente_web
-     #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=cadastrocliente_web
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=cadastrocliente_web org.jacoco:jacoco-maven-plugin:prepare-agent -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml 
-      
-            
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=osmarbraz_cadastrocliente_web org.jacoco:jacoco-maven-plugin:prepare-agent -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml 
+                  
   # Jobs do ambiente de produção
   build-prd:
     # Runner com uma instância do ubuntu      
