@@ -6,10 +6,11 @@
     <artifactId>cadastrocliente_web</artifactId>
     <version>1</version>
     <packaging>war</packaging>
-
     <name>cadastrocliente_web</name>
 
     <properties>
+        <sonar.organization>osmarbraz</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -21,12 +22,14 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>   
+        
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
@@ -48,6 +51,7 @@
                     </compilerArguments>
                 </configuration>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -56,6 +60,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -78,6 +83,27 @@
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+             <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.8</version>                
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
