@@ -11,7 +11,7 @@ import dao.TesteSuiteDAO;
 
 /**
  * Agrupa Testes unitários e testes suites.
- * 
+ *
  * @author osmar
  */
 @RunWith(Suite.class)

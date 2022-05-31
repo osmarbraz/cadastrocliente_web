@@ -12,7 +12,7 @@ import entidade.Cliente;
 
 public class TestCliente {
 
-     /**
+    /**
      * Testa o construtor sem argumentos do cliente.
      */
     @Test
