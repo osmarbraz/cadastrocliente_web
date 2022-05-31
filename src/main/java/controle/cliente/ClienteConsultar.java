@@ -8,6 +8,7 @@ import entidade.Cliente;
 
 public class ClienteConsultar extends HttpServlet {
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -18,12 +19,12 @@ public class ClienteConsultar extends HttpServlet {
         cliente.setClienteId(request.getParameter("CLIENTEID"));
         boolean resultado = cliente.abrir();
         if (resultado == true) {
-            out.print("<span class='mensagenConsultar'>Cliente encontrado!</span><p>");
+            out.print("<span class='mensagemConsultar'>Cliente encontrado.</span><p>");
             out.print(" Cliente : " + cliente.getClienteId() + " <br> ");
             out.print(" Nome : " + cliente.getNome() + " <br> ");
             out.print(" Cpf : " + cliente.getCpf() + " <br> <p>");
         } else {
-            out.print("<span class='mensagenConsultar'>Cliente n&atilde;o encontrado!</span><p>");
+            out.print("<span class='mensagemConsultar'>Cliente n&atilde;o encontrado.</span><p>");
         }
         out.print("<a href =\"" + request.getContextPath() + "/FrmClienteConsultar.jsp\"> Consultar </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
 

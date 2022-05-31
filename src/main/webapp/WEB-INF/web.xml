@@ -5,7 +5,7 @@
     <!-- mapeamento especifico -->
     <servlet>
         <servlet-name>controle.cliente.ClienteIncluir</servlet-name>
-        <servlet-class>controle.cliente.ClienteIncluir</servlet-class>
+        <servlet-class>controle.cliente.clienteIncluir</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>controle.cliente.ClienteIncluir</servlet-name>
@@ -21,7 +21,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>controle.cliente.ClienteExcluir</servlet-name>
-        <servlet-class>controle.cliente.ClienteExcluir</servlet-class>
+        <servlet-class>controle.cliente.clienteExcluir</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>controle.cliente.ClienteExcluir</servlet-name>
@@ -29,7 +29,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>controle.cliente.ClienteConsultar</servlet-name>
-        <servlet-class>controle.cliente.ClienteConsultar</servlet-class>
+        <servlet-class>controle.cliente.clienteConsultar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>controle.cliente.ClienteConsultar</servlet-name>

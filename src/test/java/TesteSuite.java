@@ -6,13 +6,15 @@ import junit.framework.JUnit4TestAdapter;
 
 import util.TestValida;
 import cliente.TestCliente;
+import controle.TesteSuiteControle;
 import dao.TesteSuiteDAO;
 
 @RunWith(Suite.class)
 @SuiteClasses({
     TesteSuiteDAO.class,
     TestCliente.class,
-    TestValida.class})
+    TestValida.class,
+    TesteSuiteControle.class})
 public class TesteSuite {
 
     public static junit.framework.Test suite() {

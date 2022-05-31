@@ -25,12 +25,12 @@ public class ClienteAlterar extends HttpServlet {
         if (cpfValido == true) {
             int resultado = cliente.alterar();
             if (resultado != 0) {
-                out.print("<span class='mensagenAlterar'>Altera&ccedil;&atilde;o realizada com sucesso!</span><p>");
+                out.print("<span class='mensagemAlterar'>Altera&ccedil;&atilde;o realizada com sucesso.</span><p>");
             } else {
-                out.print("<span class='mensagenAlterar'>Altera&ccedil;&atilde;o n&atilde;o realizada!</span><p>");
+                out.print("<span class='mensagemAlterar'>Altera&ccedil;&atilde;o n&atilde;o realizada.</span><p>");
             }
         } else {
-            out.print("CPF Invalido!");
+            out.print("CPF Inv&aacute;lido!");
         }
         out.print("<a href=\"" + request.getContextPath() + "/FrmClienteAlterar.jsp\"> Alterar </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
 

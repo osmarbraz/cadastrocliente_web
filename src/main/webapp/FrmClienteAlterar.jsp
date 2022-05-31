@@ -2,7 +2,7 @@
         <h1>Cadastro de Cliente - Alterar</h1>
         <form name="FrmCliente" method="post" action="servlet/ClienteAlterar">
             ClienteId: <input type=text name="CLIENTEID"> <p>
-                Nome : <input type=text name="NOME"> <p>
+                Nome: <input type=text size="100" name="NOME"> <p>
                 Cpf (Somente números): <input type=text name="CPF"> <p>
                 <input type="reset" value="Limpar">
             <input type="submit" name="Alterar" value="Alterar"> <p>

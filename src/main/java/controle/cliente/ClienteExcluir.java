@@ -8,6 +8,7 @@ import entidade.Cliente;
 
 public class ClienteExcluir extends HttpServlet {
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -19,9 +20,9 @@ public class ClienteExcluir extends HttpServlet {
         cliente.setClienteId(request.getParameter("CLIENTEID"));
         int resultado = cliente.excluir();
         if (resultado != 0) {
-            out.print("<span class='mensagenExcluir'>Exclus&atilde;o realizada com sucesso!</span><p>");
+            out.print("<span class='mensagemExcluir'>Exclus&atilde;o realizada com sucesso.</span><p>");
         } else {
-            out.print("<span class='mensagenExcluir'>Exclus&atilde;o n&atilde;o realizada!</span><p>");
+            out.print("<span class='mensagemExcluir'>Exclus&atilde;o n&atilde;o realizada.</span><p>");
         }
         out.print("<a href=\"" + request.getContextPath() + "/FrmClienteExcluir.jsp\"> Excluir </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
 
