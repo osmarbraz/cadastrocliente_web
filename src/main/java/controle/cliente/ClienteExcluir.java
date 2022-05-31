@@ -1,8 +1,13 @@
 package controle.cliente;
 
-import javax.servlet.http.*;
-import javax.servlet.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.owasp.encoder.Encode;
 
 import entidade.Cliente;
 
@@ -17,7 +22,8 @@ public class ClienteExcluir extends HttpServlet {
         out.println("<h1>Cadastro de Cliente - Excluir</h1>");
 
         Cliente cliente = new Cliente();
-        cliente.setClienteId(request.getParameter("CLIENTEID"));
+        String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));
+        cliente.setClienteId(encodeCLIENTEID);
         int resultado = cliente.excluir();
         if (resultado != 0) {
             out.print("<span class='mensagemExcluir'>Exclus&atilde;o realizada com sucesso.</span><p>");

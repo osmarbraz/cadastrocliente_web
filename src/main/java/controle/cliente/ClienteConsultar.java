@@ -1,8 +1,13 @@
 package controle.cliente;
 
-import javax.servlet.http.*;
-import javax.servlet.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.owasp.encoder.Encode;
 
 import entidade.Cliente;
 
@@ -16,7 +21,9 @@ public class ClienteConsultar extends HttpServlet {
         out.println("<h1>Cadastro de Cliente - Consultar</h1>");
 
         Cliente cliente = new Cliente();
-        cliente.setClienteId(request.getParameter("CLIENTEID"));
+        String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));   
+        System.out.println(">>>>>>>>encodeCLIENTEID:"+encodeCLIENTEID);
+        cliente.setClienteId(encodeCLIENTEID);
         boolean resultado = cliente.abrir();
         if (resultado == true) {
             out.print("<span class='mensagemConsultar'>Cliente encontrado.</span><p>");
