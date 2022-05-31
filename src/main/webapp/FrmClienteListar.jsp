@@ -8,7 +8,7 @@
         <table border="1">    
             <caption>Lista de clientes</caption>
             <tr>
-                <th scope="col">ClienteId</th> <th scope="col">Nome</td><th scope="col">CPF</th>
+                <th scope="col">ClienteId</th><th scope="col">Nome</td><th scope="col">CPF</th>
             </tr>                  
             <% 	Cliente cliente = new Cliente();
                 List<Cliente> clientes = cliente.getLista();
