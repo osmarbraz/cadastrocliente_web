@@ -18,6 +18,12 @@ import entidade.Cliente;
 
 public class TestClienteIncluir {
 
+    /**
+     * Teste de incluão de novo cliente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Test
     public void testDoPost1() throws IOException, ServletException {
 
@@ -53,7 +59,13 @@ public class TestClienteIncluir {
         cliente.excluir();
     }
     
-     @Test
+    /**
+     * Teste de incluão de cliente existente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
+    @Test
     public void testDoPost2() throws IOException, ServletException {
 
         // Dados da inclusão
@@ -92,6 +104,12 @@ public class TestClienteIncluir {
         cliente2.excluir();
     }
     
+    /**
+     * Teste de incluão de novo cliente com cpf inválido.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Test
     public void testDoPost3() throws IOException, ServletException {
 

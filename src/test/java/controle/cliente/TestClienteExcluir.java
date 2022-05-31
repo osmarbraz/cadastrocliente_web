@@ -18,6 +18,12 @@ import entidade.Cliente;
 
 public class TestClienteExcluir {
 
+    /**
+     * Teste exclusão cliente existente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Test
     public void testDoPost1() throws IOException, ServletException {
 
@@ -49,6 +55,12 @@ public class TestClienteExcluir {
         assertTrue(resultado.contains("Exclus&atilde;o realizada com sucesso."));
     }
     
+    /**
+     * Teste exclusão cliente não existente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Test
     public void testDoPost2() throws IOException, ServletException {
 

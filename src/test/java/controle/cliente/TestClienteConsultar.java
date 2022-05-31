@@ -18,6 +18,12 @@ import entidade.Cliente;
 
 public class TestClienteConsultar {
 
+    /**
+     * Teste cliente existente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Test
     public void testDoPost1() throws IOException, ServletException {
 
@@ -53,7 +59,13 @@ public class TestClienteConsultar {
         cliente.excluir();
     }
     
-     @Test
+    /**
+     * Teste cliente não existente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
+    @Test
     public void testDoPost2() throws IOException, ServletException {
 
         //Dados da consulta        

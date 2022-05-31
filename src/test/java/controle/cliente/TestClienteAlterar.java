@@ -18,6 +18,12 @@ import entidade.Cliente;
 
 public class TestClienteAlterar {
 
+    /**
+     * Teste de alteração de cliente com cpf válido.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Test
     public void testDoPost1() throws IOException, ServletException {
 
@@ -56,8 +62,58 @@ public class TestClienteAlterar {
         cliente.excluir();
     }
     
-     @Test
+    /**
+     * Teste de alteração de cliente com cpf inválido.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
+    @Test
     public void testDoPost2() throws IOException, ServletException {
+
+        // Dados da alteração        
+        Cliente cliente = new Cliente("131", "Teste", "11111111111");
+        Cliente clienteAlterado = new Cliente("131", "Cliente Existente", "111111111");
+        // Insere os dados para serem alterados
+        cliente.inserir();
+
+        //Servlet
+        HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
+        HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
+        ServletContext mockedServletContext = mock(ServletContext.class);
+        HttpSession mockedSession = mock(HttpSession.class);
+        doReturn(mockedServletContext).when(mockedRequest).getServletContext();
+
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(mockedResponse.getWriter()).thenReturn(writer);
+
+        //Parâmetros da alteração
+        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(clienteAlterado.getClienteId());
+        when(mockedRequest.getParameter("NOME")).thenReturn(clienteAlterado.getNome());
+        when(mockedRequest.getParameter("CPF")).thenReturn(clienteAlterado.getCpf());
+        when(mockedRequest.getSession()).thenReturn(mockedSession);
+
+        //Servlet Alteração
+        ClienteAlterar clienteAlterar = new ClienteAlterar();
+        clienteAlterar.doPost(mockedRequest, mockedResponse);
+
+        //Resultado do servlet
+        String resultado = stringWriter.toString();
+        assertTrue(resultado.contains("CPF Inv&aacute;lido!"));
+
+        //Exclui os dados da consulta
+        cliente.excluir();
+    }
+    
+    /**
+     * Teste de alteração de cliente não existente.
+     * 
+     * @throws IOException
+     * @throws ServletException 
+     */
+     @Test
+    public void testDoPost3() throws IOException, ServletException {
 
         // Dados da alteração        
         Cliente cliente = new Cliente("131", "Teste", "11111111111");

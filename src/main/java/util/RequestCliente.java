@@ -5,6 +5,11 @@ import org.owasp.encoder.Encode;
 
 import entidade.Cliente;
 
+/**
+ * Classe que processa os dados de um request de cliente.
+ * 
+ * @author osmar
+ */
 public class RequestCliente {
     
     private RequestCliente(){
