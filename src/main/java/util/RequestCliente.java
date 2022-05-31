@@ -7,6 +7,10 @@ import entidade.Cliente;
 
 public class RequestCliente {
     
+    private RequestCliente(){
+        
+    }
+    
     /**
      * Retorna um objeto cliente preenchido dos parâmetros de uma requisição.
      * @param request

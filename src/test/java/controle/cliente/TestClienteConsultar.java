@@ -1,6 +1,5 @@
 package controle.cliente;
 
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import java.io.PrintWriter;
@@ -20,7 +19,7 @@ import entidade.Cliente;
 public class TestClienteConsultar {
 
     @Test
-    public void testDoPost() throws IOException, ServletException {
+    public void testDoPost1() throws IOException, ServletException {
 
         //Dados da consulta        
         Cliente cliente = new Cliente("131", "Teste", "11111111111");
@@ -49,6 +48,41 @@ public class TestClienteConsultar {
         //Resultado do servlet
         String resultado = stringWriter.toString();
         assertTrue(resultado.contains("Cliente : 131"));
+
+        //Exclui os dados da consulta
+        cliente.excluir();
+    }
+    
+     @Test
+    public void testDoPost2() throws IOException, ServletException {
+
+        //Dados da consulta        
+        Cliente cliente = new Cliente("131", "Teste", "11111111111");
+        //Insere os dados para serem consultados
+        cliente.inserir();
+
+        //Servlet
+        HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
+        HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
+        ServletContext mockedServletContext = mock(ServletContext.class);
+        HttpSession mockedSession = mock(HttpSession.class);
+        doReturn(mockedServletContext).when(mockedRequest).getServletContext();
+
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(mockedResponse.getWriter()).thenReturn(writer);
+
+        //Parâmetros da consulta
+        when(mockedRequest.getParameter("CLIENTEID")).thenReturn("133");
+        when(mockedRequest.getSession()).thenReturn(mockedSession);
+
+        //Servlet Consulta
+        ClienteConsultar clienteConsultar = new ClienteConsultar();
+        clienteConsultar.doPost(mockedRequest, mockedResponse);
+
+        //Resultado do servlet
+        String resultado = stringWriter.toString();
+        assertTrue(resultado.contains("Cliente n&atilde;o encontrado"));
 
         //Exclui os dados da consulta
         cliente.excluir();

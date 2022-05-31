@@ -7,11 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.owasp.encoder.Encode;
-
 import util.Valida;
-import entidade.Cliente;
 import util.RequestCliente;
+import entidade.Cliente;
 
 public class ClienteIncluir extends HttpServlet {
 

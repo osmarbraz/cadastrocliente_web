@@ -19,10 +19,10 @@ import entidade.Cliente;
 public class TestClienteIncluir {
 
     @Test
-    public void testDoPost() throws IOException, ServletException {
+    public void testDoPost1() throws IOException, ServletException {
 
         // Dados da inclusão
-        Cliente cliente = new Cliente("131", "Cliente Existente", "11111111111");
+        Cliente cliente = new Cliente("140", "Cliente Existente", "11111111111");
         
         // Servlet
         HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
@@ -46,8 +46,82 @@ public class TestClienteIncluir {
         clienteIncluir.doPost(mockedRequest, mockedResponse);
 
         //Resultado do servlet
-        String resultado = stringWriter.toString();
+        String resultado = stringWriter.toString();        
         assertTrue(resultado.contains("Inclus&atilde;o realizada com sucesso."));
+
+        //Exclui os dados da inclusão
+        cliente.excluir();
+    }
+    
+     @Test
+    public void testDoPost2() throws IOException, ServletException {
+
+        // Dados da inclusão
+        Cliente cliente1 = new Cliente("135", "Cliente Existente", "11111111111");
+        
+        Cliente cliente2 = new Cliente("135", "Cliente Existente", "11111111111");
+        cliente2.inserir();
+        
+        // Servlet
+        HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
+        HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
+        ServletContext mockedServletContext = mock(ServletContext.class);
+        HttpSession mockedSession = mock(HttpSession.class);
+        doReturn(mockedServletContext).when(mockedRequest).getServletContext();
+
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(mockedResponse.getWriter()).thenReturn(writer);
+
+        //Parâmetros da inclusão
+        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(cliente1.getClienteId());
+        when(mockedRequest.getParameter("NOME")).thenReturn(cliente1.getNome());
+        when(mockedRequest.getParameter("CPF")).thenReturn(cliente1.getCpf());
+        when(mockedRequest.getSession()).thenReturn(mockedSession);
+
+        //Servlet Consulta
+        ClienteIncluir clienteIncluir = new ClienteIncluir();
+        clienteIncluir.doPost(mockedRequest, mockedResponse);
+
+        //Resultado do servlet
+        String resultado = stringWriter.toString();        
+        assertTrue(resultado.contains("Inclus&atilde;o n&atilde;o realizada."));
+
+        //Exclui os dados da inclusão
+        cliente1.excluir();
+        cliente2.excluir();
+    }
+    
+    @Test
+    public void testDoPost3() throws IOException, ServletException {
+
+        // Dados da inclusão
+        Cliente cliente = new Cliente("137", "Cliente Existente", "111");
+        
+        // Servlet
+        HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
+        HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
+        ServletContext mockedServletContext = mock(ServletContext.class);
+        HttpSession mockedSession = mock(HttpSession.class);
+        doReturn(mockedServletContext).when(mockedRequest).getServletContext();
+
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(mockedResponse.getWriter()).thenReturn(writer);
+
+        //Parâmetros da inclusão
+        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(cliente.getClienteId());
+        when(mockedRequest.getParameter("NOME")).thenReturn(cliente.getNome());
+        when(mockedRequest.getParameter("CPF")).thenReturn(cliente.getCpf());
+        when(mockedRequest.getSession()).thenReturn(mockedSession);
+
+        //Servlet Consulta
+        ClienteIncluir clienteIncluir = new ClienteIncluir();
+        clienteIncluir.doPost(mockedRequest, mockedResponse);
+
+        //Resultado do servlet
+        String resultado = stringWriter.toString();        
+        assertTrue(resultado.contains("CPF Inv&aacute;lido!"));
 
         //Exclui os dados da inclusão
         cliente.excluir();

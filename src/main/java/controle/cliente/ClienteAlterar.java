@@ -1,7 +1,5 @@
 package controle.cliente;
 
-import org.owasp.encoder.Encode;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -10,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import util.Valida;
-import entidade.Cliente;
 import util.RequestCliente;
+import entidade.Cliente;
 
 public class ClienteAlterar extends HttpServlet {
 
