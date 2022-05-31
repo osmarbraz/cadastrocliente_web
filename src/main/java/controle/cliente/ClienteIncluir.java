@@ -18,7 +18,7 @@ public class ClienteIncluir extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        out.println("<html><head><title>Cadastro de Cliente - Incluir</title></head><body>");
+        out.println("<!DOCTYPE html><html lang=\"pt-br\" xml:lang=\"pt-br\"><head><title>Cadastro de Cliente - Incluir</title></head><body>");
         out.println("<h1>Cadastro de Cliente - Incluir</h1>");
 
         Cliente cliente = RequestCliente.recuperaCliente(request);

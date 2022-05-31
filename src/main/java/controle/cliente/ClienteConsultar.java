@@ -17,7 +17,7 @@ public class ClienteConsultar extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Cadastro de Cliente - Consultar</title></head><body>");
+        out.println("<!DOCTYPE html><html lang=\"pt-br\" xml:lang=\"pt-br\"><head><title>Cadastro de Cliente - Consultar</title></head><body>");
         out.println("<h1>Cadastro de Cliente - Consultar</h1>");
 
         Cliente cliente = new Cliente();

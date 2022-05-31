@@ -1,4 +1,6 @@
-<html><head><title>Cadastro de Cliente - Incluir</title></head><body>
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+    <head><title>Cadastro de Cliente - Incluir</title></head><body>
         <h1>Cadastro de Cliente - Incluir</h1>
         <form name="FrmCliente" method="post" action="servlet/ClienteIncluir">	
             ClienteId: <input type=text name="CLIENTEID"> <p>
@@ -8,4 +10,5 @@
             <input type="submit" name="Incluir" value="Incluir"> <p>
                 <a href="menu.jsp"> Menu </a> <p>	  
         </form>
-    </body></html>	
+    </body>
+</html>	
