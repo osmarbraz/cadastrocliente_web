@@ -24,7 +24,7 @@ public class ClienteAlterar extends HttpServlet {
         Cliente cliente = RequestCliente.recuperaCliente(request);
         Valida valida = new Valida();
         boolean cpfValido = valida.validaCPF(cliente.getCpf());
-        //if (cpfValido == true) {
+        
         if (cpfValido) {
             int resultado = cliente.alterar();
             if (resultado != 0) {
