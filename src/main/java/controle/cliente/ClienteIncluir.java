@@ -22,7 +22,7 @@ public class ClienteIncluir extends HttpServlet {
         out.println("<h1>Cadastro de Cliente - Incluir</h1>");
 
         Cliente cliente = RequestCliente.recuperaCliente(request);
-        
+
         Valida valida = new Valida();
         boolean cpfValido = valida.validaCPF(cliente.getCpf());
         if (cpfValido == true) {

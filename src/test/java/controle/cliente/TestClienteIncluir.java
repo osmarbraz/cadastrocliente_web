@@ -20,16 +20,16 @@ public class TestClienteIncluir {
 
     /**
      * Teste de incluão de novo cliente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost1() throws IOException, ServletException {
 
         // Dados da inclusão
         Cliente cliente = new Cliente("140", "Cliente Existente", "11111111111");
-        
+
         // Servlet
         HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
         HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
@@ -52,28 +52,28 @@ public class TestClienteIncluir {
         clienteIncluir.doPost(mockedRequest, mockedResponse);
 
         //Resultado do servlet
-        String resultado = stringWriter.toString();        
+        String resultado = stringWriter.toString();
         assertTrue(resultado.contains("Inclus&atilde;o realizada com sucesso."));
 
         //Exclui os dados da inclusão
         cliente.excluir();
     }
-    
+
     /**
      * Teste de incluão de cliente existente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost2() throws IOException, ServletException {
 
         // Dados da inclusão
         Cliente cliente1 = new Cliente("135", "Cliente Existente", "11111111111");
-        
+
         Cliente cliente2 = new Cliente("135", "Cliente Existente", "11111111111");
         cliente2.inserir();
-        
+
         // Servlet
         HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
         HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
@@ -96,26 +96,26 @@ public class TestClienteIncluir {
         clienteIncluir.doPost(mockedRequest, mockedResponse);
 
         //Resultado do servlet
-        String resultado = stringWriter.toString();        
+        String resultado = stringWriter.toString();
         assertTrue(resultado.contains("Inclus&atilde;o n&atilde;o realizada."));
 
         //Exclui os dados da inclusão
         cliente1.excluir();
         cliente2.excluir();
     }
-    
+
     /**
      * Teste de incluão de novo cliente com cpf inválido.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost3() throws IOException, ServletException {
 
         // Dados da inclusão
         Cliente cliente = new Cliente("137", "Cliente Existente", "111");
-        
+
         // Servlet
         HttpServletRequest mockedRequest = mock(HttpServletRequest.class);
         HttpServletResponse mockedResponse = mock(HttpServletResponse.class);
@@ -138,7 +138,7 @@ public class TestClienteIncluir {
         clienteIncluir.doPost(mockedRequest, mockedResponse);
 
         //Resultado do servlet
-        String resultado = stringWriter.toString();        
+        String resultado = stringWriter.toString();
         assertTrue(resultado.contains("CPF Inv&aacute;lido!"));
 
         //Exclui os dados da inclusão

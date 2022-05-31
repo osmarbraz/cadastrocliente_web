@@ -20,9 +20,9 @@ public class TestClienteConsultar {
 
     /**
      * Teste cliente existente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost1() throws IOException, ServletException {
@@ -58,12 +58,12 @@ public class TestClienteConsultar {
         //Exclui os dados da consulta
         cliente.excluir();
     }
-    
+
     /**
      * Teste cliente não existente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost2() throws IOException, ServletException {

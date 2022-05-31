@@ -21,7 +21,7 @@ public class ClienteConsultar extends HttpServlet {
         out.println("<h1>Cadastro de Cliente - Consultar</h1>");
 
         Cliente cliente = new Cliente();
-        String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));           
+        String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));
         cliente.setClienteId(encodeCLIENTEID);
         boolean resultado = cliente.abrir();
         if (resultado == true) {

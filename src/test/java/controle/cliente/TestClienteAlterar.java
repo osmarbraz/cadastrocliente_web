@@ -20,9 +20,9 @@ public class TestClienteAlterar {
 
     /**
      * Teste de alteração de cliente com cpf válido.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost1() throws IOException, ServletException {
@@ -61,12 +61,12 @@ public class TestClienteAlterar {
         //Exclui os dados da consulta
         cliente.excluir();
     }
-    
+
     /**
      * Teste de alteração de cliente com cpf inválido.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost2() throws IOException, ServletException {
@@ -105,14 +105,14 @@ public class TestClienteAlterar {
         //Exclui os dados da consulta
         cliente.excluir();
     }
-    
+
     /**
      * Teste de alteração de cliente não existente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
-     @Test
+    @Test
     public void testDoPost3() throws IOException, ServletException {
 
         // Dados da alteração        

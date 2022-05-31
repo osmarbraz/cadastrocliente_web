@@ -20,9 +20,9 @@ public class TestClienteExcluir {
 
     /**
      * Teste exclusão cliente existente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost1() throws IOException, ServletException {
@@ -51,15 +51,15 @@ public class TestClienteExcluir {
         clienteExcluir.doPost(mockedRequest, mockedResponse);
 
         //Resultado do servlet
-        String resultado = stringWriter.toString();     
+        String resultado = stringWriter.toString();
         assertTrue(resultado.contains("Exclus&atilde;o realizada com sucesso."));
     }
-    
+
     /**
      * Teste exclusão cliente não existente.
-     * 
+     *
      * @throws IOException
-     * @throws ServletException 
+     * @throws ServletException
      */
     @Test
     public void testDoPost2() throws IOException, ServletException {
@@ -88,7 +88,7 @@ public class TestClienteExcluir {
         clienteExcluir.doPost(mockedRequest, mockedResponse);
 
         //Resultado do servlet
-        String resultado = stringWriter.toString();     
+        String resultado = stringWriter.toString();
         assertTrue(resultado.contains("Exclus&atilde;o n&atilde;o realizada."));
     }
 }

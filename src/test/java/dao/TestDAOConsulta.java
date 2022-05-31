@@ -14,7 +14,7 @@ public class TestDAOConsulta {
 
     Cliente cliente;
 
-     /**
+    /**
      * Instância um cliente para os testes.
      */
     @Before
@@ -68,6 +68,7 @@ public class TestDAOConsulta {
 
     /**
      * Exclui os clientes usados nos testes.
+     *
      * @throws java.lang.Exception
      */
     @After
