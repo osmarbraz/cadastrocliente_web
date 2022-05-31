@@ -89,9 +89,9 @@ public class SQLiteDAOFactory extends DAOFactory {
      */
     public String implode(String separator, @SuppressWarnings("rawtypes") Collection collection) {
         StringBuilder textBuilderReturn = new StringBuilder();
-        Iterator it = collection.iterator();
+        Iterator<String> it = collection.iterator();
         while (it.hasNext()) {
-            String text = (String) it.next();
+            String text = it.next();
             textBuilderReturn.append(text);
             if (it.hasNext()) {
                 textBuilderReturn.append(separator);
