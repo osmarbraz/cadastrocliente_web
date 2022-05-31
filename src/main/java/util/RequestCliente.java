@@ -7,6 +7,11 @@ import entidade.Cliente;
 
 public class RequestCliente {
     
+    /**
+     * Retorna um objeto cliente preenchido dos parâmetros de uma requisição.
+     * @param request
+     * @return Um cliente preenchido.
+     */
     public static Cliente recuperaCliente(HttpServletRequest request) {
         Cliente cliente = new Cliente();
         String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));        
