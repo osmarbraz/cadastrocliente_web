@@ -110,7 +110,6 @@ public class SQLiteClienteDAO extends SQLiteDAOFactory implements ClienteDAO, SQ
 
             } catch (SQLException e) {
                 LOGGER.log(Level.SEVERE, "Erro no inserir:{0}", e.toString());
-                res = false;
             } finally {
                 fecharAcessoBD(con, stmt, null);
             }
