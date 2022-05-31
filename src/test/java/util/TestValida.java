@@ -50,11 +50,19 @@ public class TestValida {
         assertTrue(valida.validaCPF("31626333033"));
     }
 
+   /**
+     * Testa CPF inválido.
+     */
+    @Test
+    public void testValidaCPFInvalido1() {
+        assertFalse(valida.validaCPF("94622036011"));
+    }
+
     /**
      * Testa CPF com problema na conversão.
      */
     @Test
-    public void testValidaCPFInvalido() {
+    public void testValidaCPFInvalido2() {
         //CPF com problema na conversão
         assertFalse(valida.validaCPF("0065XAB22050"));
     }
