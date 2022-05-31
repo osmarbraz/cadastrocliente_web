@@ -6,7 +6,7 @@
     <head><title>Cadastro de Cliente - Listar</title></head><body>
         <h1>Cadastro de Cliente - Listar</h1>
         <table border="1">    
-            <td>ClienteId</td> <td>Nome</td><td>Cpf</td>
+            <td>ClienteId</td> <td>Nome</td><td>CPF</td>
             <% 	Cliente cliente = new Cliente();
                 List<Cliente> clientes = cliente.getLista();
                 for (Cliente aux : clientes) {%>                    			
