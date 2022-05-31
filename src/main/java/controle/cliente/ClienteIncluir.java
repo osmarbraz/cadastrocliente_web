@@ -11,6 +11,7 @@ import org.owasp.encoder.Encode;
 
 import util.Valida;
 import entidade.Cliente;
+import util.RequestCliente;
 
 public class ClienteIncluir extends HttpServlet {
 
@@ -22,13 +23,8 @@ public class ClienteIncluir extends HttpServlet {
         out.println("<html><head><title>Cadastro de Cliente - Incluir</title></head><body>");
         out.println("<h1>Cadastro de Cliente - Incluir</h1>");
 
-        Cliente cliente = new Cliente();
-               String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));        
-        cliente.setClienteId(encodeCLIENTEID);
-        String encodeNOME = org.owasp.encoder.Encode.forHtml(request.getParameter("NOME"));
-        cliente.setNome(encodeNOME);
-        String encodeCPF = org.owasp.encoder.Encode.forHtml(request.getParameter("CPF"));
-        cliente.setCpf(encodeCPF);
+        Cliente cliente = RequestCliente.recuperaCliente(request);
+        
         Valida valida = new Valida();
         boolean cpfValido = valida.validaCPF(cliente.getCpf());
         if (cpfValido == true) {
