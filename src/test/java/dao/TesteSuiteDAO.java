@@ -20,7 +20,8 @@ import dao.cliente.TestRAFRegistroCliente;
     TestDAOInclusaoChavePrimaria.class,
     TestDAOExclusao.class,
     TestRAFRegistroCliente.class,
-    TestRAFClienteDAO.class})
+    TestRAFClienteDAO.class,
+    TestSQLiteDAOFactory.class})
 
 public class TesteSuiteDAO {
 
