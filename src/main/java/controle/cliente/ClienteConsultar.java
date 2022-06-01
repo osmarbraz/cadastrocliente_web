@@ -14,10 +14,10 @@ import entidade.Cliente;
 public class ClienteConsultar extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        try {
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        try ( PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html><html lang=\"pt-br\" xml:lang=\"pt-br\"><head><title>Cadastro de Cliente - Consultar</title></head><body>");
             out.println("<h1>Cadastro de Cliente - Consultar</h1>");
 
@@ -25,7 +25,7 @@ public class ClienteConsultar extends HttpServlet {
             String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));
             cliente.setClienteId(encodeCLIENTEID);
             boolean resultado = cliente.abrir();
-            if (resultado == true) {
+            if (resultado) {
                 out.print("<span class='mensagemConsultar'>Cliente encontrado.</span><p>");
                 out.print(" Cliente : " + cliente.getClienteId() + " <br> ");
                 out.print(" Nome : " + cliente.getNome() + " <br> ");
@@ -36,8 +36,6 @@ public class ClienteConsultar extends HttpServlet {
             out.print("<a href =\"" + request.getContextPath() + "/FrmClienteConsultar.jsp\"> Consultar </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
 
             out.println("</body></html>");
-            out.close();
-        } catch (IOException e) {
         }
     }
 }

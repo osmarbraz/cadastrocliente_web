@@ -14,13 +14,10 @@ import entidade.Cliente;
 public class ClienteAlterar extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        try {
-            response.getWriter().print("Test");
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-
+        response.setContentType("text/html");
+        try ( PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html><html lang=\"pt-br\" xml:lang=\"pt-br\"><head><title>Cadastro de Cliente - Alterar</title></head><body>");
             out.println("<h1>Cadastro de Cliente - Alterar</h1>");
 
@@ -41,8 +38,6 @@ public class ClienteAlterar extends HttpServlet {
             out.print("<a href=\"" + request.getContextPath() + "/FrmClienteAlterar.jsp\"> Alterar </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
 
             out.println("</body></html>");
-            out.close();
-        } catch (IOException e) {
         }
     }
 }

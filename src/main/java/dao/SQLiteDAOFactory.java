@@ -58,9 +58,9 @@ public class SQLiteDAOFactory extends DAOFactory {
             Class.forName(getDriverClass());
             con = DriverManager.getConnection(getJdbcURL());
         } catch (ClassNotFoundException e) {
-            LOGGER.log(Level.SEVERE, "Classe não encontrada!{0}", e);
+            LOGGER.log(Level.SEVERE, "Classe não encontrada!{0}", e.toString());
         } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE, "Problema na conexão!{0}", e);
+            LOGGER.log(Level.SEVERE, "Problema na conexão!{0}", e.toString());
         }
         return con;
     }

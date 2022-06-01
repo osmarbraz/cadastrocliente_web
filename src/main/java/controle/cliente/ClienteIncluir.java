@@ -14,11 +14,10 @@ import entidade.Cliente;
 public class ClienteIncluir extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        try {
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.setContentType("text/html");
+        try ( PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html><html lang=\"pt-br\" xml:lang=\"pt-br\"><head><title>Cadastro de Cliente - Incluir</title></head><body>");
             out.println("<h1>Cadastro de Cliente - Incluir</h1>");
 
@@ -26,7 +25,7 @@ public class ClienteIncluir extends HttpServlet {
 
             Valida valida = new Valida();
             boolean cpfValido = valida.validaCPF(cliente.getCpf());
-            if (cpfValido == true) {
+            if (cpfValido) {
                 boolean resultado = cliente.inserir();
                 if (resultado == true) {
                     out.print("<span class='mensagemIncluir'>Inclus&atilde;o realizada com sucesso.</span><p>");
@@ -39,8 +38,7 @@ public class ClienteIncluir extends HttpServlet {
             out.print("<a href=\"" + request.getContextPath() + "/FrmClienteIncluir.jsp\"> Incluir </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
 
             out.println("</body></html>");
-            out.close();
-        } catch (IOException e) {
         }
+
     }
 }
