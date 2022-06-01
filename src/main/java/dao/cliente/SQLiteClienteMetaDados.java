@@ -6,6 +6,13 @@ package dao.cliente;
  * @author osmarbraz
  */
 public final class SQLiteClienteMetaDados {
+    
+    /** 
+     * Evita que a classe seja instânciada.
+     */
+    private SQLiteClienteMetaDados() {
+        
+    }
 
     /**
      * string com o nome da tabela usada no banco
@@ -20,12 +27,12 @@ public final class SQLiteClienteMetaDados {
     /**
      * string com os campos para serem utilizados com insert
      */
-    public static String METADADOSINSERT = "CLIENTEID, NOME, CPF ";
+    public static final String METADADOSINSERT = "CLIENTEID, NOME, CPF ";
 
     /**
      * Retorna uma string com os campos para serem utilizados com select
      */
-    public static String METADADOSSELECT
+    public static final String METADADOSSELECT
             = TABLE + ".CLIENTEID, "
             + TABLE + ".NOME, "
             + TABLE + ".CPF";
