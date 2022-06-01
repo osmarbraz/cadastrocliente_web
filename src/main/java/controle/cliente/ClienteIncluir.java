@@ -27,7 +27,7 @@ public class ClienteIncluir extends HttpServlet {
             boolean cpfValido = valida.validaCPF(cliente.getCpf());
             if (cpfValido) {
                 boolean resultado = cliente.inserir();
-                if (resultado == true) {
+                if (resultado) {
                     out.print("<span class='mensagemIncluir'>Inclus&atilde;o realizada com sucesso.</span><p>");
                 } else {
                     out.print("<span class='mensagemIncluir'>Inclus&atilde;o n&atilde;o realizada.</span><p>");
