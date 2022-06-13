@@ -16,8 +16,7 @@
  - Se desejar utilizar outra fonte de dados, edite o arquivo src\dao\Factory.java alterando a FABRICA para outro valor.
  - Toda iteração com banco de dados é tratada diretamente pelo DAO(Data Access Object).<br>
  - Os dados de configuração (Servidor, Database, Usuario, Senha) da integração do java com o banco de dados estão no arquivo src/dao/SQLiteDadosBanco.java.<br>
- - A especificação da fábrica a ser utilizada é feita na interface Factory.java.
- - Utiliza o Apache Maven para a automatização da construção.<br>
+ - A especificação da fábrica a ser utilizada é feita na interface Factory.java. 
  - A pasta test contêm os testes unitários do projeto utilizando JUnit 4.<br> 
  - Os testes são realizados no SO ubuntu-lastest e JDK 16, 17 e 18.<br>
  - A cobertura do código é realizada através do JaCoCo e relatório enviado para o Sonarcloud.<br>
