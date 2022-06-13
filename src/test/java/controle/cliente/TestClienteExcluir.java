@@ -43,7 +43,7 @@ public class TestClienteExcluir {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da exclusão
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn("131");
+        when(mockedRequest.getParameter("ClienteId")).thenReturn("131");
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
         //Servlet Exclusão
@@ -80,7 +80,7 @@ public class TestClienteExcluir {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da exclusão
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn("133");
+        when(mockedRequest.getParameter("ClienteId")).thenReturn("133");
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
         //Servlet Exclusão

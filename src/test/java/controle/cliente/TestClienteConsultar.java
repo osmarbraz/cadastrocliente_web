@@ -44,7 +44,7 @@ public class TestClienteConsultar {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da consulta
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn("131");
+        when(mockedRequest.getParameter("ClienteId")).thenReturn("131");
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
         //Servlet Consulta
@@ -53,7 +53,7 @@ public class TestClienteConsultar {
 
         //Resultado do servlet
         String resultado = stringWriter.toString();
-        assertTrue(resultado.contains("Cliente : 131"));
+        assertTrue(resultado.contains("ClienteId : 131"));
 
         //Exclui os dados da consulta
         cliente.excluir();
@@ -85,7 +85,7 @@ public class TestClienteConsultar {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da consulta
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn("133");
+        when(mockedRequest.getParameter("ClienteId")).thenReturn("133");
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
         //Servlet Consulta

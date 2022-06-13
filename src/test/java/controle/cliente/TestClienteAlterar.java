@@ -51,8 +51,8 @@ public class TestClienteAlterar {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da alteração
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(clienteAlterado.getClienteId());
-        when(mockedRequest.getParameter("NOME")).thenReturn(clienteAlterado.getNome());
+        when(mockedRequest.getParameter("ClienteId")).thenReturn(clienteAlterado.getClienteId());
+        when(mockedRequest.getParameter("Nome")).thenReturn(clienteAlterado.getNome());
         when(mockedRequest.getParameter("CPF")).thenReturn(clienteAlterado.getCpf());
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 

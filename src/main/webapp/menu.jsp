@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br" xml:lang="pt-br">
-    <head><title>Cadastro de Cliente </title></head>
+    <head>
+        <title>Cadastro de Cliente </title>
+    </head>
     <body>
         <h1> Cadastro de Cliente </h1>	
         <h2> Menu </h2><p>

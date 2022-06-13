@@ -25,18 +25,18 @@ public class ClienteConsultar extends HttpServlet {
                 out.println("<h1>Cadastro de Cliente - Consultar</h1>");
 
                 Cliente cliente = new Cliente();
-                String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));
-                cliente.setClienteId(encodeCLIENTEID);
+                String encodeClienteId = Encode.forHtml(request.getParameter("ClienteId"));
+                cliente.setClienteId(encodeClienteId);
                 boolean resultado = cliente.abrir();
                 if (resultado) {
-                    out.print("<span class='mensagemConsultar'>Cliente encontrado.</span><p>");
-                    out.print(" Cliente : " + cliente.getClienteId() + " <br> ");
-                    out.print(" Nome : " + cliente.getNome() + " <br> ");
-                    out.print(" Cpf : " + cliente.getCpf() + " <br> <p>");
+                    out.print("<span class='mensagemConsultar'>Cliente encontrado.</span><br><br>");
+                    out.print("ClienteId : " + cliente.getClienteId() + " <br>");
+                    out.print("Nome : " + cliente.getNome() + " <br>");
+                    out.print("CPF : " + cliente.getCpf() + " <br>");
                 } else {
-                    out.print("<span class='mensagemConsultar'>Cliente n&atilde;o encontrado.</span><p>");
+                    out.print("<span class='mensagemConsultar'>Cliente n&atilde;o encontrado.</span><br>");
                 }
-                out.print("<a href =\"" + request.getContextPath() + "/FrmClienteConsultar.jsp\"> Consultar </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
+                out.print("<br><a href =\"" + request.getContextPath() + "/FrmClienteConsultar.jsp\"> Consultar </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a><br>");
 
                 out.println("</body></html>");
             }

@@ -25,15 +25,15 @@ public class ClienteExcluir extends HttpServlet {
                 out.println("<h1>Cadastro de Cliente - Excluir</h1>");
 
                 Cliente cliente = new Cliente();
-                String encodeCLIENTEID = Encode.forHtml(request.getParameter("CLIENTEID"));
-                cliente.setClienteId(encodeCLIENTEID);
+                String encodeClienteId = Encode.forHtml(request.getParameter("ClienteId"));
+                cliente.setClienteId(encodeClienteId);
                 int resultado = cliente.excluir();
                 if (resultado != 0) {
-                    out.print("<span class='mensagemExcluir'>Exclus&atilde;o realizada com sucesso.</span><p>");
+                    out.print("<span class='mensagemExcluir'>Exclus&atilde;o realizada com sucesso.</span><br>");
                 } else {
-                    out.print("<span class='mensagemExcluir'>Exclus&atilde;o n&atilde;o realizada.</span><p>");
+                    out.print("<span class='mensagemExcluir'>Exclus&atilde;o n&atilde;o realizada.</span><br>");
                 }
-                out.print("<a href=\"" + request.getContextPath() + "/FrmClienteExcluir.jsp\"> Excluir </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
+                out.print("<br><a href=\"" + request.getContextPath() + "/FrmClienteExcluir.jsp\"> Excluir </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a><br>");
 
                 out.println("</body></html>");
             }

@@ -32,14 +32,14 @@ public class ClienteIncluir extends HttpServlet {
                 if (cpfValido) {
                     boolean resultado = cliente.inserir();
                     if (resultado) {
-                        out.print("<span class='mensagemIncluir'>Inclus&atilde;o realizada com sucesso.</span><p>");
+                        out.print("<span class='mensagemIncluir'>Inclus&atilde;o realizada com sucesso.</span><br>");
                     } else {
-                        out.print("<span class='mensagemIncluir'>Inclus&atilde;o n&atilde;o realizada.</span><p>");
+                        out.print("<span class='mensagemIncluir'>Inclus&atilde;o n&atilde;o realizada.</span><br>");
                     }
                 } else {
-                    out.print("CPF Inv&aacute;lido!");
+                    out.print("<span class='mensagemIncluir'>CPF Inv&aacute;lido!</span><br>");
                 }
-                out.print("<a href=\"" + request.getContextPath() + "/FrmClienteIncluir.jsp\"> Incluir </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <p>");
+                out.print("<br><a href=\"" + request.getContextPath() + "/FrmClienteIncluir.jsp\"> Incluir </a> - <a href=\"" + request.getContextPath() + "/menu.jsp\"> Menu </a> <br>");
 
                 out.println("</body></html>");
             }

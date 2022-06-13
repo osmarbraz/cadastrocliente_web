@@ -42,8 +42,8 @@ public class TestClienteIncluir {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da inclusão
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(cliente.getClienteId());
-        when(mockedRequest.getParameter("NOME")).thenReturn(cliente.getNome());
+        when(mockedRequest.getParameter("ClienteId")).thenReturn(cliente.getClienteId());
+        when(mockedRequest.getParameter("Nome")).thenReturn(cliente.getNome());
         when(mockedRequest.getParameter("CPF")).thenReturn(cliente.getCpf());
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
@@ -86,8 +86,8 @@ public class TestClienteIncluir {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da inclusão
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(cliente1.getClienteId());
-        when(mockedRequest.getParameter("NOME")).thenReturn(cliente1.getNome());
+        when(mockedRequest.getParameter("ClienteId")).thenReturn(cliente1.getClienteId());
+        when(mockedRequest.getParameter("Nome")).thenReturn(cliente1.getNome());
         when(mockedRequest.getParameter("CPF")).thenReturn(cliente1.getCpf());
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
@@ -128,8 +128,8 @@ public class TestClienteIncluir {
         when(mockedResponse.getWriter()).thenReturn(writer);
 
         //Parâmetros da inclusão
-        when(mockedRequest.getParameter("CLIENTEID")).thenReturn(cliente.getClienteId());
-        when(mockedRequest.getParameter("NOME")).thenReturn(cliente.getNome());
+        when(mockedRequest.getParameter("ClienteId")).thenReturn(cliente.getClienteId());
+        when(mockedRequest.getParameter("Nome")).thenReturn(cliente.getNome());
         when(mockedRequest.getParameter("CPF")).thenReturn(cliente.getCpf());
         when(mockedRequest.getSession()).thenReturn(mockedSession);
 
