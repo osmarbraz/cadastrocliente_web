@@ -14,6 +14,8 @@ import entidade.Cliente;
 public class ClienteConsultar extends HttpServlet {
 
     private static final Logger LOGGER = Logger.getLogger(ClienteConsultar.class.getName());
+    
+    private static final String BREAKROW = "<br>"; 
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
@@ -30,9 +32,9 @@ public class ClienteConsultar extends HttpServlet {
                 boolean resultado = cliente.abrir();
                 if (resultado) {
                     out.print("<span class='mensagemConsultar'>Cliente encontrado.</span><br><br>");
-                    out.print("ClienteId : " + cliente.getClienteId() + " <br>");
-                    out.print("Nome : " + cliente.getNome() + " <br>");
-                    out.print("CPF : " + cliente.getCpf() + " <br>");
+                    out.print("ClienteId : " + cliente.getClienteId() + BREAKROW);
+                    out.print("Nome : " + cliente.getNome() + BREAKROW);
+                    out.print("CPF : " + cliente.getCpf() + BREAKROW);
                 } else {
                     out.print("<span class='mensagemConsultar'>Cliente n&atilde;o encontrado.</span><br>");
                 }
