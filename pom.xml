@@ -3,10 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com</groupId>
     <artifactId>cadastrocliente_web</artifactId>
-    <version>1</version>
+    <version>0.0.1</version>
     <packaging>war</packaging>
     
     <name>cadastrocliente_web</name>
+    <description>Exemplo CRUD Cliente WEB</description>
 
     <properties>
         <sonar.organization>osmarbraz</sonar.organization>
@@ -140,6 +141,38 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:alpine</image>
+                    </from>
+                    <to>                        
+                        <image>osmarbraz/cadastrocliente_web:${project.version}</image>
+                        <auth>
+                            <username>
+                                ${env.DOCKERHUB_USERNAME}
+                            </username>
+                            <password>
+                                ${env.DOCKERHUB_TOKEN}
+                            </password>
+                        </auth>
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Xms256m</jvmFlag>
+                            <jvmFlag>-Xmx512m</jvmFlag>
+                        </jvmFlags>
+                        <ports>
+                            <port>8080</port>
+                        </ports>                        
+                    </container>
+                </configuration>
+            </plugin>
+            
         </plugins>
     </build>
 
