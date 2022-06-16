@@ -86,7 +86,7 @@ jobs:
     environment: 
       name: prd
     needs: build-hmg
-    name: build-prd - Empacotamento e distribuição.
+    name: build-prd - Empacotamento e distribuição
     steps:
     # Utiliza a action checkout para fazer o git clone no runner        
     - name: Realiza o checkout do repositório

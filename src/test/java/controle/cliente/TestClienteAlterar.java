@@ -62,7 +62,6 @@ public class TestClienteAlterar {
 
         //Resultado do servlet
         String resultado = stringWriter.toString();
-        System.out.println("Resultado>>>>>>>>>>>>>>>>>>>>>>:"+resultado);
         assertTrue(resultado.contains(resultadoEsperado));
 
         //Exclui os dados da consulta
