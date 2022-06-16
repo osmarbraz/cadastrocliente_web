@@ -147,8 +147,8 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>3.2.1</version>
                 <configuration>
-                    <from>
-                        <image>openjdk:alpine</image>
+                    <from>                        
+                        <image>tomcat:8.5-jre8-alpine</image>
                     </from>
                     <to>                        
                         <image>osmarbraz/cadastrocliente_web:${project.version}</image>
@@ -162,6 +162,7 @@
                         </auth>
                     </to>
                     <container>
+                        <appRoot>/usr/local/tomcat/webapps/ROOT</appRoot>
                         <jvmFlags>
                             <jvmFlag>-Xms256m</jvmFlag>
                             <jvmFlag>-Xmx512m</jvmFlag>
