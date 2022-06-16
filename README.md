@@ -1,6 +1,7 @@
 [![Github Actions Status for osmarbraz/cadastrocliente_web](https://github.com/osmarbraz/cadastrocliente_web/workflows/Integra%C3%A7%C3%A3o%20continua%20de%20Java%20com%20Maven/badge.svg)](https://github.com/osmarbraz/cadastrocliente_web/actions) 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=osmarbraz_cadastrocliente_web&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=osmarbraz_cadastrocliente_web)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=osmarbraz_cadastrocliente_web&metric=coverage)](https://sonarcloud.io/component_measures?id=osmarbraz_cadastrocliente_web&metric=coverage)
+[![Docker](https://img.shields.io/badge/Docker-build-brightgreen)](https://hub.docker.com/r/osmarbraz/cadastrocliente_web/builds)
 
 # Sistema de Cadastro de Clientes para WEB em Banco de Dados em 3 camadas utilizando o padrão Abstract Factory.
  - O projeto foi desenvolvido no NetBeans deve ser chamado cadastrocliente_web.<br>
