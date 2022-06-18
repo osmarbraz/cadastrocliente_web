@@ -165,14 +165,11 @@
                         </auth>
                     </to>
                     <container>
-                        <appRoot>/usr/local/tomcat/webapps/ROOT</appRoot>
-                        <jvmFlags>
-                            <jvmFlag>-Xms256m</jvmFlag>
-                            <jvmFlag>-Xmx512m</jvmFlag>
-                        </jvmFlags>
+                        <appRoot>/usr/local/tomcat/webapps/ROOT</appRoot>                      
                         <ports>
                             <port>8080</port>
-                        </ports>                        
+                        </ports>  
+                        <format>OCI</format>                      
                     </container>
                 </configuration>
             </plugin>
