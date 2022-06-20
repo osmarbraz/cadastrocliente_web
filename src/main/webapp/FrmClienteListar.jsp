@@ -17,7 +17,7 @@
                 List<Cliente> clientes = cliente.getLista();
                 for (Cliente aux : clientes) {%>                    			
             <tr>                   
-                <td><%=aux.getClienteId()%></td><td><%=aux.getNome()%></td><td><%=aux.getCpf()%></td                   
+                <td><%=aux.getClienteId()%></td><td><%=aux.getNome()%></td><td><%=aux.getCpf()%></td>                   
             </tr>  
             <% }%>
         </table>
