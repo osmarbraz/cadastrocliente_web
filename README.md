@@ -23,7 +23,7 @@
     - dev - Desenvolvimento - Compilação e testes.
     - hmg - Homologação - Análise e cobertura de código.
     - prd - Produção - Empacotamento e distribuição. 
-- Os testes são realizados no ambiente dev utilizando SO ubuntu-lastest e JDK 16, 17 e 18.<br>
+ - Os testes são realizados no ambiente dev utilizando SO ubuntu-lastest e JDK 16, 17 e 18.<br>
  - A cobertura do código é realizada através do JaCoCo e relatório enviado para o Sonarcloud.<br>
  - Distribuição para Docker Hub.
  
