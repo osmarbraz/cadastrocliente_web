@@ -23,7 +23,7 @@ import entidade.Cliente;
 public class TestClienteAlterar {
     
     /**
-     * Testa párametrizado do filtro para clienteid, nome e cpf em RAF inexistente.
+     * Testa parametrizado do filtro para clienteid, nome e cpf em RAF inexistente.
      */
     @Test
     @Parameters({
